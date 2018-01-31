@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       display = document.getElementsByClassName("math math-display");
       for(let node of display) {
-        katex.render(node.innerText, node { display:false });
+        katex.render(node.innerText, node, { display:false });
       }
     }
 
