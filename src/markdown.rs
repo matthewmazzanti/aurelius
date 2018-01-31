@@ -20,7 +20,7 @@ use errors::*;
 ///
 /// [CommonMark]: http://commonmark.org/
 pub fn to_html_cmark(markdown: &str) -> String {
-    let parser = Parser::new_ext(markdown, OPTION_ENABLE_TABLES | OPTION_ENABLE_FOOTNOTES);
+    let parser = Parser::new_ext(markdown, OPTION_ENABLE_TABLES | OPTION_ENABLE_FOOTNOTES | OPTION_ENABLE_MATH);
 
     let mut output = String::new();
     html::push_html(&mut output, parser);
