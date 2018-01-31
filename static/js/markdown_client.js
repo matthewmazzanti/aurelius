@@ -17,18 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function renderMath() {
-      if (typeof renderMathInElement === 'function') {
-        renderMathInElement(
-            document.getElementById("markdown-preview"),
-            {
-                delimiters: [
-                    {left: "$$", right: "$$", display: true},
-                    {left: "\\[", right: "\\]", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\(", right: "\\)", display: false}
-                ]
-            }
-        );
+      inline = document.getElementByClassName("math math-inline");
+      for(let node of inline) {
+        render(node.innerText, node);
       }
     }
 
