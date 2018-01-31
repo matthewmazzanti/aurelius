@@ -3,7 +3,7 @@
 use std::io::prelude::*;
 use std::process::{Command, Stdio};
 
-use pulldown_cmark::{html, Parser};
+use pulldown_cmark::{html, Parser, Options};
 use pulldown_cmark::{OPTION_ENABLE_FOOTNOTES, OPTION_ENABLE_TABLES, OPTION_ENABLE_MATH};
 
 use errors::*;
@@ -21,9 +21,9 @@ use errors::*;
 /// [CommonMark]: http://commonmark.org/
 pub fn to_html_cmark(markdown: &str) -> String {
     let mut opts = Options::empty();
-    opts.insert(OPTION_ENABLE_TABLES)
-    opts.insert(OPTION_ENABLE_FOOTNOTES)
-    opts.insert(OPTION_ENABLE_MATH)
+    opts.insert(OPTION_ENABLE_TABLES);
+    opts.insert(OPTION_ENABLE_FOOTNOTES);
+    opts.insert(OPTION_ENABLE_MATH);
          
     let parser = Parser::new_ext(markdown, opts);
 
