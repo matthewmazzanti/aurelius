@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function renderMath() {
-      inline = document.getElementByClassName("math math-inline");
+      inline = document.getElementsByClassName("math math-inline");
       for(let node of inline) {
         render(node.innerText, node);
       }
