@@ -19,7 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderMath() {
       inline = document.getElementsByClassName("math math-inline");
       for(let node of inline) {
-        render(node.innerText, node);
+        katex.render(node.innerText, node);
+      }
+      display = document.getElementsByClassName("math math-display");
+      for(let node of display) {
+        katex.render(node.innerText, node { display:false });
       }
     }
 
